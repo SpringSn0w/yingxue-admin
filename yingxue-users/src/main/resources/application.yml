@@ -1,0 +1,24 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: yingxue-users
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://docker2:3306/yingxue?characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 1111
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.10.12:8848
+        username: nacos
+        password: nacos
+
+#mybatis-plus
+mybatis-plus:
+  type-aliases-package: 实体类包路径
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
