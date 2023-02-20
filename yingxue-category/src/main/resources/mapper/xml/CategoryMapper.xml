@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.agg.yingxue.category.dao.CategoryMapper">
+
+    <resultMap id="categoryResultMap" type="com.agg.yingxue.category.entity.Category">
+        <id property="id" column="id"></id>
+        <result column="name" property="name"/>
+        <result column="parent_id" property="parentId"/>
+    </resultMap>
+    <resultMap id="categoryInfoResultMap" type="com.agg.yingxue.category.dto.CategoryInfo" extends="categoryResultMap">
+        <collection property="children" columnPrefix="child_" resultMap="categoryResultMap" />
+    </resultMap>
+
+    <select id="selectCategoriesWithChild" resultMap="categoryInfoResultMap">
+        SELECT
+            c.id,
+            c.name,
+            c.parent_id,
+            c1.id child_id,
+            c1.name child_name,
+            c1.parent_id child_parentId
+        FROM
+            category c
+                LEFT JOIN yingxue.category c1 ON c1.parent_id = c.id
+        WHERE
+            c.parent_id IS NULL
+    </select>
+</mapper>

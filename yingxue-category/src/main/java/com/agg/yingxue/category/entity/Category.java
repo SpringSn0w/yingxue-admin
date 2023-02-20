@@ -1,11 +1,15 @@
-package com.agg.yingxue.generator.entity;
+package com.agg.yingxue.category.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.Accessors;
 
 /**
  * <p>
@@ -16,7 +20,9 @@ import lombok.EqualsAndHashCode;
  * @since 2023-02-20
  */
 @Data
+@Accessors(chain = true)
 @EqualsAndHashCode(callSuper = false)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Category implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -32,6 +38,7 @@ public class Category implements Serializable {
     /**
      * 父级分类id
      */
+    @JsonProperty("parent_id")
     private Integer parentId;
 
     private LocalDateTime createdAt;
