@@ -18,7 +18,7 @@ spring:
 
 #mybatis-plus
 mybatis-plus:
-  type-aliases-package: 实体类包路径
+  type-aliases-package: com.agg.yingxue.administrators.entity
   mapper-locations: classpath:mapper/**/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

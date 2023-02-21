@@ -15,10 +15,11 @@ spring:
         server-addr: 192.168.10.12:8848
         username: nacos
         password: nacos
+        namespace: 064a5843-d39b-4188-a7ba-53bc9e573d51
 
 #mybatis-plus
 mybatis-plus:
-  type-aliases-package: 实体类包路径
+  type-aliases-package: com.agg.yingxue.category.entity
   mapper-locations: classpath:mapper/**/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

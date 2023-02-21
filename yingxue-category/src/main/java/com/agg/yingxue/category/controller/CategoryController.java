@@ -34,6 +34,11 @@ public class CategoryController {
         return categoryInfos;
     }
 
+    @GetMapping("selectOne/{id}")
+    public Category queryById(@PathVariable("id") Integer id){
+        return categoryService.getById(id);
+    }
+
     @GetMapping("{id}")
     public Category selectCategoryById(@PathVariable("id") Integer id) {
         return categoryService.getById(id);

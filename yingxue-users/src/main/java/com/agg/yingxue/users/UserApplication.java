@@ -1,13 +1,13 @@
-package com.agg.yingxue.category;
+package com.agg.yingxue.users;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.agg.yingxue.category.dao")
-public class CategoryApplication {
+@MapperScan("com.agg.yingxue.users.dao")
+public class UserApplication {
     public static void main(String[] args) {
-        SpringApplication.run(CategoryApplication.class);
+        SpringApplication.run(UserApplication.class, args);
     }
 }

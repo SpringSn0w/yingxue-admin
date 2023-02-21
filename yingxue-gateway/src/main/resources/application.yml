@@ -9,6 +9,7 @@ spring:
         server-addr: 192.168.10.12:8848
         username: nacos
         password: nacos
+        namespace: 064a5843-d39b-4188-a7ba-53bc9e573d51
     gateway:
       globalcors:
         cors-configurations:
@@ -17,4 +18,18 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
       routes: #后续增加路由配置
+        - id: Yuser
+          uri: lb://yingxue-users
+          predicates:
+            - Path=/user/**
+
+        - id: Ycategory
+          uri: lb://yingxue-category
+          predicates:
+            - Path=/category/**
+
+        - id: Yvideo
+          uri: lb://yingxue-videos
+          predicates:
+            - Path=/video/**
 

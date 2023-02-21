@@ -16,6 +16,9 @@
         <module name="yingxue-category" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="yingxue-pojo" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -24,6 +27,7 @@
       <module name="yingxue-commons" options="-parameters" />
       <module name="yingxue-gateway" options="-parameters" />
       <module name="yingxue-generator" options="-parameters" />
+      <module name="yingxue-pojo" options="-parameters" />
       <module name="yingxue-users" options="-parameters" />
       <module name="yingxue-videos" options="-parameters" />
     </option>
