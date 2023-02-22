@@ -1,8 +1,13 @@
 server:
-  port: 8090
+  port: 9999
 spring:
   application:
     name: yingxue-gateway
+
+  redis:
+    host: 192.168.10.12
+    port: 6379
+
   cloud:
     nacos:
       discovery:
@@ -21,15 +26,29 @@ spring:
         - id: Yuser
           uri: lb://yingxue-users
           predicates:
-            - Path=/user/**
+            - Path=/admin/users/**
+          filters:
+            - StripPrefix=1
+            - Token=true
 
         - id: Ycategory
           uri: lb://yingxue-category
           predicates:
-            - Path=/category/**
+            - Path=/admin/categories/**
+          filters:
+            - StripPrefix=1
+            - Token=true
 
         - id: Yvideo
           uri: lb://yingxue-videos
           predicates:
-            - Path=/video/**
+            - Path=/admin/videos/**
+          filters:
+            - StripPrefix=1
+            - Token=true
+
+        - id: Yadmin
+          uri: lb://yingxue-administrators
+          predicates:
+            - Path=/admin/tokens/**,/admin/admin-user
 

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 @FeignClient(value = "yingxue-users",contextId = "userClient")
-@RequestMapping("/user")
 public interface UserClient {
     @GetMapping("selectByName/{name}")
     public List<User> queryByName(@PathVariable("name") String name);

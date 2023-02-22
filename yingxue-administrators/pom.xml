@@ -21,6 +21,15 @@
             <groupId>com.agg</groupId>
             <artifactId>yingxue-commons</artifactId>
         </dependency>
+        <!--springboot跟redis关联的一个依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

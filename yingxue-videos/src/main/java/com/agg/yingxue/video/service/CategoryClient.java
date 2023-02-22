@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @FeignClient(value = "yingxue-category",contextId = "cateClient")
-@RequestMapping("/category")
 public interface CategoryClient {
     @GetMapping("selectOne/{id}")
     public Category queryById(@PathVariable("id") Integer id);

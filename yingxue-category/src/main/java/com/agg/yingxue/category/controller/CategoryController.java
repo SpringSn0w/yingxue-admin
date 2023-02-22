@@ -22,7 +22,6 @@ import java.util.List;
  */
 @RestController
 @ResultBody
-@RequestMapping("/category")
 public class CategoryController {
 
     @Autowired
